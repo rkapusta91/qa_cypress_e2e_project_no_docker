@@ -28,7 +28,8 @@ const FollowUserButton = ({ profile }) => {
     setFollowing(!following)
   }
   return (
-    <button
+    <button 
+      data-cy="follow/unfollow"
       className={`btn btn-sm action-btn ${
         following ? 'btn-secondary' : 'btn-outline-secondary'
       }`}

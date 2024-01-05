@@ -15,7 +15,7 @@ const ArticlePreview = ({ article }) => {
         <CustomLink href={routes.userView(preview.author.username)}>
           <CustomImage src={preview.author.image} alt="author profile image" />
         </CustomLink>
-        <div className="info">
+        <div data-cy="user" className="info">
           <CustomLink
             href={routes.userView(preview.author.username)}
             className="author"
