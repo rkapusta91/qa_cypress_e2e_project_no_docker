@@ -21,7 +21,7 @@ describe('Sign Up page', () => {
   it('should provide an ability to sign up with valid data', () => {
     cy.visit('/user/register');
     cy.getByDataCy('signUpText').should('contain.text', 'Sign up');
-    cy.getByDataCy('Username').type(user.username);
+    cy.getByDataCy('username-sign-in').type(user.username);
     cy.getByDataCy('email-sign-in').type(user.email);
     cy.getByDataCy('password-sign-in').type(user.password);
     cy.getByDataCy('sign-in-btn').click();
@@ -31,7 +31,7 @@ describe('Sign Up page', () => {
   it('should not provide the ability to sign up with an empty username', () => {
     cy.visit('/user/register');
     cy.getByDataCy('signUpText').should('contain.text', 'Sign up');
-    cy.getByDataCy('Username').clear();
+    cy.getByDataCy('username-sign-in').clear();
     cy.getByDataCy('email-sign-in').type(user.email);
     cy.getByDataCy('password-sign-in').type(user.password);
     cy.getByDataCy('sign-in-btn').click();
@@ -43,7 +43,7 @@ describe('Sign Up page', () => {
   it('should not provide the ability to sign up using a username starting with a number', () => {
     cy.visit('/user/register');
     cy.getByDataCy('signUpText').should('contain.text', 'Sign up');
-    cy.getByDataCy('Username').type(randomNumber + user.username);
+    cy.getByDataCy('username-sign-in').type(randomNumber + user.username);
     cy.getByDataCy('email-sign-in').type(user.email);
     cy.getByDataCy('password-sign-in').type(user.password);
     cy.getByDataCy('sign-in-btn').click();
@@ -55,7 +55,7 @@ describe('Sign Up page', () => {
   it('should not provide the ability to sign up using a username <3 letters', () => {
     cy.visit('/user/register');
     cy.getByDataCy('signUpText').should('contain.text', 'Sign up');
-    cy.getByDataCy('Username').type(shortUsername);
+    cy.getByDataCy('username-sign-in').type(shortUsername);
     cy.getByDataCy('email-sign-in').type(user.email);
     cy.getByDataCy('password-sign-in').type(user.password);
     cy.getByDataCy('sign-in-btn').click();
@@ -67,7 +67,7 @@ describe('Sign Up page', () => {
    it('should not provide the ability to sign up using a username >40 letters', () => {
     cy.visit('/user/register');
     cy.getByDataCy('signUpText').should('contain.text', 'Sign up');
-    cy.getByDataCy('Username').type(longUsername);
+    cy.getByDataCy('username-sign-in').type(longUsername);
     cy.getByDataCy('email-sign-in').type(user.email);
     cy.getByDataCy('password-sign-in').type(user.password);
     cy.getByDataCy('sign-in-btn').click();
@@ -79,7 +79,8 @@ describe('Sign Up page', () => {
   it('should not provide the ability to sign up using a username with spaces', () => {
     cy.visit('/user/register');
     cy.getByDataCy('signUpText').should('contain.text', 'Sign up');
-    cy.getByDataCy('Username').type(user.username + ' ' + user.username);
+    cy.getByDataCy('username-sign-in')
+      .type(user.username + ' ' + user.username);
     cy.getByDataCy('email-sign-in').type(user.email);
     cy.getByDataCy('password-sign-in').type(user.password);
     cy.getByDataCy('sign-in-btn').click();
@@ -90,7 +91,7 @@ describe('Sign Up page', () => {
   it('should not provide the ability to sign up with an empty email', () => {
     cy.visit('/user/register');
     cy.getByDataCy('signUpText').should('contain.text', 'Sign up');
-    cy.getByDataCy('Username').type(user.username);
+    cy.getByDataCy('username-sign-in').type(user.username);
     cy.getByDataCy('email-sign-in').clear();
     cy.getByDataCy('password-sign-in').type(user.password);
     cy.getByDataCy('sign-in-btn').click();
@@ -102,7 +103,7 @@ describe('Sign Up page', () => {
   it('should not provide the ability to sign up without @ in the email address', () => {
     cy.visit('/user/register');
     cy.getByDataCy('signUpText').should('contain.text', 'Sign up');
-    cy.getByDataCy('Username').type(user.username);
+    cy.getByDataCy('username-sign-in').type(user.username);
     cy.getByDataCy('email-sign-in').type(`${user.username}.com`);
     cy.getByDataCy('password-sign-in').type(user.password);
     cy.getByDataCy('sign-in-btn').click();
@@ -112,7 +113,7 @@ describe('Sign Up page', () => {
   it('should not provide the ability to sign up with an empty password', () => {
     cy.visit('/user/register');
     cy.getByDataCy('signUpText').should('contain.text', 'Sign up');
-    cy.getByDataCy('Username').type(user.username);
+    cy.getByDataCy('username-sign-in').type(user.username);
     cy.getByDataCy('email-sign-in').type(user.email);
     cy.getByDataCy('password-sign-in').clear();
     cy.getByDataCy('sign-in-btn').click();
