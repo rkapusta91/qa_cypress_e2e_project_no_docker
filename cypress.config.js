@@ -1,5 +1,5 @@
 import { defineConfig } from 'cypress';
-const { faker } = require('@faker-js/faker');
+const faker = require('faker');
 const { clear } = require('./dataBase');
 
 module.exports = defineConfig({
