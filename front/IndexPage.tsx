@@ -57,6 +57,7 @@ const IndexPage = ({ articles, articlesCount, ssr, tags }) => {
                       className={`link nav-link${
                         tab === 'global' ? ' active' : ''
                       }`}
+                      data-cy="global-feed-btn"
                       onClick={() => {
                         setPage(0)
                         setTab('global')
