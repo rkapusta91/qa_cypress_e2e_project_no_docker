@@ -22,7 +22,12 @@ module.exports = defineConfig({
             description: faker.lorem.words(),
             body: faker.lorem.words(),
             tag: faker.lorem.word()
-          };;
+          };
+        },
+        updateUser() {
+          return {
+            bio: faker.person.bio()
+          };
         },
         'db:clear'() {
           clear();

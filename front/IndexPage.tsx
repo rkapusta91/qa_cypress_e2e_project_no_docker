@@ -53,7 +53,7 @@ const IndexPage = ({ articles, articlesCount, ssr, tags }) => {
                     </li>
                   </Maybe>
                   <li className="nav-item">
-                    <a
+                    <a data-cy="globalFeed"
                       className={`link nav-link${
                         tab === 'global' ? ' active' : ''
                       }`}

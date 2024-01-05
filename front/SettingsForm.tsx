@@ -80,6 +80,7 @@ const SettingsForm = () => {
             <textarea
               className="form-control form-control-lg"
               rows={8}
+              data-cy="bio"
               placeholder="Short bio about you"
               value={userInfo.bio}
               onChange={updateState('bio')}
@@ -106,6 +107,7 @@ const SettingsForm = () => {
           </fieldset>
           <button
             className="btn btn-lg btn-primary pull-xs-right"
+            data-cy="update-btn"
             type="submit"
             disabled={isLoading}
           >
