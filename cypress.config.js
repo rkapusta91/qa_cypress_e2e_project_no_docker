@@ -26,7 +26,7 @@ module.exports = defineConfig({
         },
         updateUser() {
           return {
-            bio: faker.person.bio()
+            bio: faker.lorem.words()
           };
         },
         'db:clear'() {

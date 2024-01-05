@@ -13,8 +13,7 @@ describe('Settings page', () => {
 
   before(() => {
     cy.visit('/');
-    // for the purposes of other tests, I gave up cleaning the database
-    //cy.task('db:clear');
+    cy.task('db:clear');
     cy.task('generateUser').then((generateUser) => {
       user = generateUser;
       cy.register(user.email, user.username, user.password);
